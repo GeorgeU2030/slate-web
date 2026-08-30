@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Roboto+Mono:wght@500;700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Google Sans Flex", "Inter", sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-ink: #0d0e10;
+  --color-ink-soft: #6b6a66;
+
+  --color-paper: #f6f4ee;
+  --color-paper-dim: #ece8dd;
+  --color-paper-line: #ddd7c8;
+
+  --color-brand: #b81f3d;
+  --color-brand-bright: #e2102f;
+  --color-brand-dim: #5c1424;
+
+  --color-gold: #ab8342;
+  --color-gold-soft: #ddc793;
+  --color-gold-dim: #7a5f30;
+
+  --color-ring-story: #ff2f4d;
+  --color-ring-direction: #ecd5a2;
+  --color-ring-acting: #f2758a;
+  --color-ring-technical: #c9994e;
+  --color-ring-impact: #a8a69f;
+
+  --color-score-masterpiece: #f2dcab;
+  --color-score-great: #e3c281;
+  --color-score-good: #cf9c4f;
+  --color-score-mixed: #c9834b;
+  --color-score-weak: #c66a4c;
+  --color-score-bad: #e2637d;
+}
+
+@plugin "daisyui/theme" {
+  name: "slate";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: var(--color-paper);
+  --color-base-200: var(--color-paper-dim);
+  --color-base-300: var(--color-paper-line);
+  --color-base-content: var(--color-ink);
+
+  --color-primary: var(--color-brand);
+  --color-primary-content: var(--color-paper);
+
+  --color-secondary: var(--color-ink);
+  --color-secondary-content: var(--color-paper);
+
+  --color-accent: var(--color-gold);
+  --color-accent-content: var(--color-ink);
+
+  --color-neutral: var(--color-ink);
+  --color-neutral-content: var(--color-paper);
+
+  --color-info: #3a6ea8;
+  --color-info-content: #f4f3ef;
+  --color-success: #4f7a52;
+  --color-success-content: #f4f3ef;
+  --color-warning: var(--color-gold);
+  --color-warning-content: var(--color-ink);
+  --color-error: var(--color-brand-bright);
+  --color-error-content: #f4f3ef;
+
+  --radius-selector: 1rem;
+  --radius-field: 0.65rem;
+  --radius-box: 1.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Display type: Google Sans Flex leaned into its optical-size axis for real display weight at large sizes */
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 40;
+}
+
+/* The "ledger" numeral treatment: used for every score, percentage and stat */
+.tabular-figs {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Hide the native scrollbar on every engine — the carousel ships its own progress affordance */
+.slate-scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.slate-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
